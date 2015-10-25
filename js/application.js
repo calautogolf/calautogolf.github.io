@@ -2,12 +2,10 @@ var budasApp = angular.module('budasApp', ['ngRoute']);
 countryApp.config(function($routeProvider) {
     $routeProvider.
       when('/', {
-        template: '<ul><li ng-repeat="country in countries">{{country.name}}</li><ul>',
-        controller: 'IndexCtrl'
+        templateUrl: 'index.part.html',
       }).
-      when('/:countryName', {
-        template: '<h1>TODO create country detail view</h1>',
-        controller: 'TeamsCtrl'
+      when('/team', {
+        templateUrl: 'teams.part.html',
       }).
       otherwise({
         redirectTo: '/'
