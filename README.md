@@ -1,1 +1,1 @@
-The homepage for the autonomous golf cart team
+[The homepage](calautogolf.github.io) for the autonomous golf cart team

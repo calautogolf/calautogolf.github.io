@@ -1,16 +1,4 @@
-var budasApp = angular.module('budasApp', ['ngRoute']);
-countryApp.config(function($routeProvider) {
-    $routeProvider.
-      when('/', {
-        templateUrl: 'index.part.html',
-      }).
-      when('/team', {
-        templateUrl: 'teams.part.html',
-      }).
-      otherwise({
-        redirectTo: '/'
-      });
-  });
+
 // The nice scroller
 $(function() {
     $('a[href*=#]:not([href=#])').click(function() {
