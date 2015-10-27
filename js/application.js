@@ -1,6 +1,6 @@
 
 // The nice scroller
-$(function() {
+scroller = function scroller() {
     $('a[href*=#]:not([href=#])').click(function() {
       if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
           var target = $(this.hash);
@@ -13,4 +13,12 @@ $(function() {
           }
       }
   });
-});
+}
+$(document).ready(function(){
+    scroller();
+    $('.exercise').click(function(){
+        $(this).find('.solution').slideToggle();
+    });
+})
+
+//solution reveal

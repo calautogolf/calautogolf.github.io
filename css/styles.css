@@ -8,3 +8,13 @@
     width: 200px;
     height: auto;
 }
+.exercise img{
+
+    max-height: 250px;
+    width:auto;
+}
+.exercise>.solution{
+    display: none;
+    background-color: #efefef;
+    list-style-type: none;
+}

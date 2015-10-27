@@ -20,8 +20,22 @@
         <!-- Custom Fonts -->
         <link href="../font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
         <link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
-        <!-- AngularJS-->
+
+        <!-- jQuery -->
+        <script src="../js/jquery.js"></script>
+
+        <!-- Bootstrap Core JavaScript -->
+        <script src="../js/bootstrap.min.js"></script>
         <script src="../js/application.js"></script>
+        <script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+        <script type="text/x-mathjax-config">
+          MathJax.Hub.Config({
+            tex2jax: {
+              inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+              processEscapes: true
+            }
+          });
+        </script>
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
         <!--[if lt IE 9]>
@@ -72,11 +86,36 @@
                         <h2 class="section-heading">01 - Neural Networks</h2>
                         <p class="lead"> The basis of the computer vision paradigm is the concept of machine learning. Computer vision has been heavily reliant on a set of algorithms known as neural networks (such as convolutional and deep nets). At current computer vision levels, these algorithms appear extremely daunting. However, starting with basic neural networks can provide you an intuition into how these algorithms work. </p>
                         <p class="lead">Michael Nielsen has an excellent <a href="http://neuralnetworksanddeeplearning.com/">textbook on neural networks</a> the simplifies the complicated mathematics behind neural nets into a graspable form. </p>
-                        <h3 class='section-heading'> Exercises</h3>
+                        <h3 class='section-heading'> Exercises (Click to toggle solutions)</h3>
                         <a href="http://neuralnetworksanddeeplearning.com/chap1.html"><h5>Chapter 1</h5></a>
                         <ul class="list-group">
-                            <li class="list-group-item">Draw out a network with 4 input nodes, 2 hidden layers with 5 nodes each, and an output layer with 3 nodes</li>
-                            <li class="list-group-item">Algebraically represent the output values of a network with 3 input nodes, 1 hidden layer with 4 nodes, and an output layer with 2 nodes. Use g for the sigmoid function, w_{i,j} as the weight_vector from layer i to node j  and x_i as the input vector.</li>
+                            <div class="exercise">
+                                <li class="list-group-item question">
+                                    Draw out a network with 4 input nodes, 2 hidden layers with 5 nodes each, and an output layer with 3 nodes
+                                </li>
+                                <li class="list-group-item solution">
+                                    Make sure that you've paid attention to the number of connections between the nodes.
+                                    <img src="../img/example_neural_net.png">
+                                </li>
+                            </div>
+                            <div class="exercise">
+                                <li class="list-group-item question">
+                                    Algebraically represent the output values of a network with 3 input nodes, 1 hidden layer with 4 nodes, and an output layer with 2 nodes. Use $g$ for the sigmoid function, $w_{i,j}$ as the weight vector from layer $i$ to node $j$, $b_{k,l}$ denotes the bias at neuron l in layer k, and $\vec{x}$ as the input vector. Treat layer and neuron counts as 1-based.
+                                </li>
+                                <li class="list-group-item solution">
+
+                                    <img src="../img/ex2_neural_net.png">
+                                    <p>
+                                        The neurons in layer 1 represent the input vector $\vec{x}$.
+                                    </p>
+                                    <p>
+                                        For neuron $j$ in layer 2 (the hidden layer), the output is $g(w_{1,j} \cdot \vec{x} + b_{2,j})$
+                                    </p>
+                                    <p>
+                                        For neuron $k$ in layer 3 (the output layer), the output is $g(\sum_{j=1}^{4}\left(g(w_{1,j} \cdot \vec{x} + b_{2,j})\cdot w_{2,k}[j]\right))$
+                                    </p>
+                                </li>
+                            </div>
                         </ul>
                         <a href="http://neuralnetworksanddeeplearning.com/chap2.html"><h5>Chapter 2</h5></a>
                         <ul class="list-group">
@@ -111,11 +150,7 @@
             </div>
         </footer>
 
-        <!-- jQuery -->
-        <script src="../js/jquery.js"></script>
 
-        <!-- Bootstrap Core JavaScript -->
-        <script src="../js/bootstrap.min.js"></script>
 
 
     </body>
